@@ -107,7 +107,7 @@ p {
 /* Title Image */
 
 .title-image {
-  width: 60%;
+  width: 80%;
   /* transform: rotate(25deg); */
     position: relative;
     font-weight: bold;
@@ -209,7 +209,5 @@ p {
     position: static;
     transform: rotate(0);
   }
-
-  
 }
 
