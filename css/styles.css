@@ -182,4 +182,9 @@ p {
     position: static;
     transform: rotate(0);
   }
+  body {
+    font-family: "Montserrat";
+    text-align: center;
+    zoom: 150%;
+  }
 }
