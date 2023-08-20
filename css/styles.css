@@ -1,6 +1,6 @@
-/* MOUSE */
+/* MOUSE
 /* Flashlight Overlay */
-:root {
+/* :root {
   cursor: none;
   --cursorX: 50vw;
   --cursorY: 50vh;
@@ -13,15 +13,17 @@
   position: fixed;
   pointer-events: none;
   background: radial-gradient(
-    circle 50vmax at var(--cursorX) var(--cursorY),
+    circle 30vmax at var(--cursorX) var(--cursorY),
     rgba(0,0,0,0) 0%,
     rgba(0,0,0,.5) 80%,
     rgba(0,0,0,.95) 100%
   )
-}
+}  */
+
+
 
 body {
-  font-family: "Montserrat";
+  font-family: 'Mexon', sans-serif;
   text-align: center;
 }
 
@@ -34,6 +36,10 @@ p {
 }
 
 /* Headings */
+
+.logotext {
+  font-family: 'Mexon', sans-serif;
+}
 
 .big-heading {
   font-family: "Montserrat";
@@ -69,11 +75,11 @@ p {
   padding: 0 0 4.5rem;
 }
 
-.navbar-brand {
+/* .navbar-brand {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 2.5rem;
+  margin: 2px;
   font-weight: bold;
-}
+} */
 
 .nav-item {
   padding: 0 18px;
