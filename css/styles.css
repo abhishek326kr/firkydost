@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-  color: #8f8f8f;
+  color: #ffffff;
 }
 
 /* Headings */
@@ -61,18 +61,18 @@ p {
 /* Sections */
 
 .colored-section {
-  background-color: #7a0ad6;
+  background-color: #990000;
   color: #fff;
 }
 
 .white-section {
-  background-color: #fff;
+  background-color: #a30000;
 }
 
 /* Navigation Bar */
 
 .navbar {
-  padding: 0 0 4.5rem;
+  padding: 0 0 4.5rem 0;
 }
 
 /* .navbar-brand {
@@ -82,7 +82,7 @@ p {
 } */
 
 .nav-item {
-  padding: 0 18px;
+  padding: 0 1px;
 }
 
 .nav-link {
@@ -138,12 +138,12 @@ p {
 }
 
 .icon {
-  color: #280752;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .icon:hover {
-  color: #ff4c68;
+  color: #000000;
 }
 
 /* Testimonial Section */
@@ -165,6 +165,7 @@ p {
 
 .col-lg-6 {
   text-decoration-color: #fff;
+  float:left;
 }
 
 
