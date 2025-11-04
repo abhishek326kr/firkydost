@@ -1,270 +1,1164 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Abhishek Kumar — Web Developer & Devops Engineer</title>
-  <meta name="description" content="Abhishek Kumar — Web Developer & DevOps Engineer. PHP, JS, React, Laravel, AWS, Docker, Terraform, CI/CD. Based in Kolkata." />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>AK</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Kumar — Web Developer & DevOps Engineer</title>
+    <meta name="description" content="Abhishek Kumar — Web Developer & DevOps Engineer. PHP, JavaScript, Python, React, Laravel, AWS, Docker, Terraform, CI/CD. Based in Kolkata.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>AK</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0066cc;
+            --light-bg: #f8f9fb;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-gray: #666666;
+            --border-color: #e5e7eb;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-hover: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--light-bg);
+        }
+
+        /* Header Navigation */
+        .header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--white);
+            padding: 4rem 2rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.875rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .hero-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+        }
+
+        .hero-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), #0099ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-card .role {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.4rem 0.8rem;
+            background: var(--light-bg);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* Section */
+        .section {
+            padding: 4rem 2rem;
+            background: var(--white);
+            margin-bottom: 1px;
+        }
+
+        .section-alt {
+            background: var(--light-bg);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .highlight-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .section-alt .highlight-card {
+            background: var(--white);
+        }
+
+        .highlight-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            display: block;
+        }
+
+        .highlight-card .label {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-blue);
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            padding: 0.4rem 0;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-card li::before {
+            content: '▸';
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .project-date {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-gray);
+            flex-grow: 1;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-badge {
+            padding: 0.3rem 0.7rem;
+            background: var(--light-bg);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        /* AWS Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .cert-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff9900, #ff6600);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+        }
+
+        .cert-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .cert-date {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* Experience Section */
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 180px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 180px;
+            top: 20px;
+            bottom: -3rem;
+            width: 2px;
+            background: var(--border-color);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-date {
+            text-align: right;
+            color: var(--primary-blue);
+            font-weight: 600;
+            padding-top: 0.25rem;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .timeline-company {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .timeline-content li {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--light-bg);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .contact-item-content strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+
+        .contact-item-content span {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .contact-item-content a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            background: var(--light-bg);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s;
+            font-weight: 700;
+        }
+
+        .social-link:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--white);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-gray);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .hero-container,
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .cert-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .timeline-date {
+                text-align: left;
+            }
+
+            .timeline-item::before,
+            .timeline-item::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-  <button id="color-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">AK</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <header class="site-header">
-    <nav class="nav container">
-      <div class="brand">
-        <a href="#" class="logo">Abhishek <span class="muted">Kumar</span></a>
-        <span class="tagline">Web Dev • DevOps • Automation</span>
-      </div>
-      <ul class="nav-links" role="navigation">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <!-- HERO -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Hi, I'm <span class="accent">Abhishek Kumar</span></h1>
-          <p class="lead">Web Developer & DevOps Engineer from Kolkata — I build scalable web apps, automation, and clean deployments.<br>
-          <em class="poetic">“Code like a kavi, deploy like a machine.”</em></p>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Abhishek Kumar</h1>
+                <p class="subtitle">DevOps Engineer & AWS Golden Jacket Recipient</p>
+                <p>Dynamic Web Developer & DevOps Engineer with 2+ years of experience building, optimizing, and deploying scalable web applications. Passionate about automation, cloud infrastructure, and delivering performant user experiences.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="abhishek-kumar-resume.pdf" class="btn btn-secondary" download>Download CV</a>
+                </div>
 
-          <p class="cta-row">
-            <a class="btn primary" href="#projects">View Projects</a>
-            <a class="btn ghost" href="mailto:abhishek326kr@gmail.com">Email Me</a>
-          </p>
-
-          <ul class="quick-info">
-            <li><strong>Location:</strong> Kolkata, India</li>
-            <li><strong>Email:</strong> abhishek326kr@gmail.com</li>
-            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/abhishek326kr" target="_blank" rel="noopener">abhishek326kr</a></li>
-          </ul>
-        </div>
-
-        <aside class="hero-card">
-          <div class="profile">
-            <div class="avatar" aria-hidden="true">AK</div>
-            <h3>Abhishek Kumar</h3>
-            <p class="muted">Web Developer & DevOps Engineer</p>
-          </div>
-
-          <div class="skill-summary">
-            <h4>Core Skills</h4>
-            <div class="chips">
-              <span>PHP</span><span>JavaScript</span><span>Python</span><span>React</span>
-              <span>Laravel</span><span>AWS</span><span>Docker</span><span>Terraform</span>
+                <div class="hero-info">
+                    <div><strong>📍 Location:</strong> Kolkata, India</div>
+                    <div><strong>📧 Email:</strong> abhishek326kr@gmail.com</div>
+                    <div><strong>💼 LinkedIn:</strong> <a href="https://linkedin.com/in/abhishek326kr" target="_blank" style="color: var(--primary-blue);">abhishek326kr</a></div>
+                </div>
             </div>
-          </div>
 
-          <div class="download-resume">
-            <a class="btn small" href="abhishek-kumar-resume.pdf" download>Download Resume</a>
-          </div>
-        </aside>
-      </div>
+            <div class="hero-card">
+                <div class="profile-avatar">AK</div>
+                <h3>Abhishek Kumar</h3>
+                <p class="role">Web Developer & DevOps Engineer</p>
+                
+                <h4 style="margin-bottom: 1rem; color: var(--text-dark);">Core Skills</h4>
+                <div class="skills-preview">
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Terraform</span>
+                </div>
+
+                <a href="abhishek-kumar-resume.pdf" class="btn btn-primary" style="width: 100%; text-align: center;" download>Download Resume</a>
+            </div>
+        </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="container about">
-      <h2>About</h2>
-      <div class="about-grid">
-        <div>
-          <p>Dynamic Web Developer & DevOps Engineer with 2+ years of experience building, optimizing, and deploying scalable web applications. Passionate about automation, server optimization, and delivering performant user experiences.</p>
+    <!-- About Section -->
+    <section id="about" class="section section-alt">
+        <div class="section-container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Dynamic Web Developer & DevOps Engineer with 2+ years of experience building, optimizing, and deploying scalable web applications. Passionate about automation, server optimization, and delivering performant user experiences.</p>
+                    
+                    <p><strong>Tech approach:</strong> Clean code, automated CI/CD, containerized environments, infrastructure as code, and observability. I specialize in building production-ready applications with modern DevOps practices.</p>
 
-          <p><strong>Tech approach:</strong> Clean code, automated CI/CD, containerised environments, infrastructure as code, and observability — sab kuch automated.</p>
+                    <p>Currently working at YoForex Corp as Senior Web Developer / DevOps Engineer, leading deployment and maintenance of large-scale web applications on AWS infrastructure.</p>
+                </div>
+
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <span class="number">2+</span>
+                        <span class="label">Years Experience</span>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="number">10+</span>
+                        <span class="label">Production Deployments</span>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="number">390+</span>
+                        <span class="label">ML Models Deployed</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="about-stats">
-          <div class="stat"><strong>2+</strong><span>Years experience</span></div>
-          <div class="stat"><strong>10+</strong><span>Production deployments</span></div>
-          <div class="stat"><strong>390+</strong><span>ML Models (YoForex AI)</span></div>
-        </div>
-      </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section-skills">
-      <div class="container">
-        <h2>Skills</h2>
-        <p class="muted">Languages, frameworks, cloud, databases, and tools drawn from my resume.</p>
+    <!-- Technical Skills Section -->
+    <section id="skills" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>PHP</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Python</li>
+                        <li>HTML & CSS</li>
+                        <li>SQL</li>
+                        <li>Bash</li>
+                    </ul>
+                </div>
 
-        <div class="skills-grid">
-          <!-- Languages -->
-          <div class="skill-card">
-            <h3>Languages</h3>
-            <ul>
-              <li>PHP</li>
-              <li>JavaScript (ES6+)</li>
-              <li>Python</li>
-              <li>HTML & CSS</li>
-              <li>SQL</li>
-            </ul>
-          </div>
+                <div class="skill-card">
+                    <h3>Frameworks & Libraries</h3>
+                    <ul>
+                        <li>React</li>
+                        <li>Node.js & Express</li>
+                        <li>Laravel</li>
+                        <li>FastAPI</li>
+                        <li>MQL5</li>
+                    </ul>
+                </div>
 
-          <!-- Frameworks -->
-          <div class="skill-card">
-            <h3>Frameworks & Libraries</h3>
-            <ul>
-              <li>React</li>
-              <li>Node.js & Express</li>
-              <li>Laravel</li>
-            </ul>
-          </div>
+                <div class="skill-card">
+                    <h3>Cloud & DevOps</h3>
+                    <ul>
+                        <li>AWS (EC2, S3, IAM, Route53)</li>
+                        <li>Docker</li>
+                        <li>Terraform</li>
+                        <li>GitHub Actions</li>
+                        <li>Jenkins</li>
+                        <li>Nginx</li>
+                    </ul>
+                </div>
 
-          <!-- Cloud & DevOps -->
-          <div class="skill-card">
-            <h3>Cloud & DevOps</h3>
-            <ul>
-              <li>AWS (EC2, S3, IAM, Route53)</li>
-              <li>Docker</li>
-              <li>Terraform</li>
-              <li>GitHub Actions, Jenkins</li>
-              <li>Nginx, Linux</li>
-            </ul>
-          </div>
+                <div class="skill-card">
+                    <h3>Databases</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>PostgreSQL</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
 
-          <!-- DB & Tools -->
-          <div class="skill-card">
-            <h3>Databases & Tools</h3>
-            <ul>
-              <li>MySQL, MongoDB</li>
-              <li>Git & GitHub</li>
-              <li>VS Code, Postman</li>
-              <li>AWS CLI, Docker CLI</li>
-            </ul>
-          </div>
+                <div class="skill-card">
+                    <h3>Development Tools</h3>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>VS Code</li>
+                        <li>Postman</li>
+                        <li>AWS CLI</li>
+                        <li>Docker CLI</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>DevOps Practices</h3>
+                    <ul>
+                        <li>CI/CD Pipelines</li>
+                        <li>Infrastructure as Code</li>
+                        <li>Container Orchestration</li>
+                        <li>Automated Deployments</li>
+                        <li>Linux Administration</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="container projects">
-      <h2>Projects</h2>
-      <p class="muted">Selected projects (from your resume). Click to view repo or live demo if available.</p>
+    <!-- Projects Section -->
+    <section id="projects" class="section section-alt">
+        <div class="section-container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>YoForex AI — Ultimate AI Trading Analysis Tool</h3>
+                    <p class="project-date">Jul 2025 – Present</p>
+                    <p class="project-description">
+                        Engineered an AI-powered forex analytics tool with 390+ models for automated insights. Features predictive analytics, chart overlays, and performance insights with Docker-based deployment.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">REST APIs</span>
+                    </div>
+                </div>
 
-      <div class="project-grid">
-        <article class="project">
-          <h3>YoForex AI — Ultimate AI Trading Analysis Tool</h3>
-          <p class="muted small">Jul 2025 – Present</p>
-          <p>Engineered an AI-powered forex analytics tool with 390+ models for automated insights. Predictive analytics, chart overlays, and performance insights.</p>
-          <p class="tech">Tech: Python, FastAPI, AWS EC2 & S3, Docker, REST APIs</p>
-          <p class="project-links">
-            <a href="#" class="btn small ghost" aria-disabled="true">Repo</a>
-            <a href="#" class="btn small" aria-disabled="true">Live</a>
-          </p>
-        </article>
+                <div class="project-card">
+                    <h3>Advanced Blogging Dashboard</h3>
+                    <p class="project-date">Feb 2025 – Mar 2025</p>
+                    <p class="project-description">
+                        Built a real-time blogging dashboard with analytics, role-based access control, modular architecture, and caching for optimal performance.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">PHP</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">MySQL</span>
+                        <span class="tech-badge">AWS</span>
+                    </div>
+                </div>
 
-        <article class="project">
-          <h3>Advanced Blogging Dashboard — Scalable & SEO-Optimized</h3>
-          <p class="muted small">Feb 2025 – Mar 2025</p>
-          <p>Built a real-time blogging dashboard with analytics, role-based access, modular architecture and caching.</p>
-          <p class="tech">Tech: PHP, React, MySQL, AWS, DevOps Tools</p>
-          <p class="project-links">
-            <a href="https://github.com/abhishek326kr" target="_blank" class="btn small">Repo</a>
-          </p>
-        </article>
+                <div class="project-card">
+                    <h3>Flexymarkets Admin System</h3>
+                    <p class="project-date">Oct 2025</p>
+                    <p class="project-description">
+                        Automated deployment pipeline using GitHub Actions for seamless CI/CD. Implemented SSH-based deployment to AWS EC2 with automated build processes.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">GitHub Actions</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">AWS EC2</span>
+                        <span class="tech-badge">SSH</span>
+                    </div>
+                </div>
 
-        <article class="project">
-          <h3>Signal Dashboard (Ufirst Project)</h3>
-          <p class="muted small">Custom Project</p>
-          <p>Trading dashboard showing SL / TP / Entry signals, admin panel, and notifications. Built with PHP + JS and APIs for gold trading.</p>
-          <p class="tech">Tech: PHP, JS, REST APIs</p>
-        </article>
-      </div>
+                <div class="project-card">
+                    <h3>Signal Dashboard</h3>
+                    <p class="project-date">Custom Project</p>
+                    <p class="project-description">
+                        Trading dashboard showing SL/TP/Entry signals with admin panel and real-time notifications. Built with PHP + JavaScript for gold trading signals.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">PHP</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">REST APIs</span>
+                        <span class="tech-badge">MQL5</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Achiever Marketing Platform</h3>
+                    <p class="project-date">Oct 2025</p>
+                    <p class="project-description">
+                        Digital marketing platform with automated deployment workflows, payment integration, and comprehensive user management system.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">PHP</span>
+                        <span class="tech-badge">Laravel</span>
+                        <span class="tech-badge">GitHub Actions</span>
+                        <span class="tech-badge">AWS</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Portfolio Website</h3>
+                    <p class="project-date">Nov 2025</p>
+                    <p class="project-description">
+                        Modern, responsive portfolio website with SSO integration (Telegram, Google/Firebase) and developer-centric UI with prominent animations.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML/CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Firebase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="container experience">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="time">Aug 2024 – Present</div>
-          <div class="content">
-            <h4>Senior Web Developer / DevOps Engineer — YoForex Corp, Kolkata</h4>
-            <ul>
-              <li>Led deployment & maintenance of large-scale web apps on AWS Linux servers.</li>
-              <li>Built CI/CD pipelines with GitHub Actions.</li>
-              <li>Implemented Docker-based environments for backend scalability.</li>
-            </ul>
-          </div>
+    <!-- AWS Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="section-container">
+            <h2 class="section-title">AWS Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">☁️</div>
+                    <h4>AWS Cloud Practitioner</h4>
+                    <p class="cert-date">Issued 2022</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🏗️</div>
+                    <h4>AWS Solutions Architect</h4>
+                    <p class="cert-date">Issued 2023</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🔧</div>
+                    <h4>AWS DevOps Engineer</h4>
+                    <p class="cert-date">Issued 2024</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🐳</div>
+                    <h4>Docker & Kubernetes</h4>
+                    <p class="cert-date">Fundamentals</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">⚙️</div>
+                    <h4>GitHub Actions CI/CD</h4>
+                    <p class="cert-date">Issued 2024</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🔐</div>
+                    <h4>AWS Security</h4>
+                    <p class="cert-date">Specialty</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🏗️</div>
+                    <h4>Terraform Associate</h4>
+                    <p class="cert-date">IaC Certification</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🎯</div>
+                    <h4>AWS Golden Jacket</h4>
+                    <p class="cert-date">Recipient</p>
+                </div>
+            </div>
         </div>
-
-        <div class="timeline-item">
-          <div class="time">Dec 2023 – Jul 2024</div>
-          <div class="content">
-            <h4>Web Developer — VA Talks Pvt. Ltd.</h4>
-            <ul>
-              <li>Developed & optimized WordPress sites (Divi & PHP).</li>
-              <li>Improved page load speed by ~30% through backend work.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="time">Jan 2023 – Dec 2023</div>
-          <div class="content">
-            <h4>Web Developer — The Social Glue Pvt. Ltd.</h4>
-            <ul>
-              <li>Created responsive features using React & WordPress.</li>
-              <li>Integrated APIs for dynamic UI & improved SEO.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="container certs">
-      <h2>Certifications</h2>
-      <div class="cert-grid">
-        <div class="cert">AWS Cloud Certification (2022)</div>
-        <div class="cert">Docker & Kubernetes Fundamentals</div>
-        <div class="cert">GitHub Actions CI/CD Automation (2024)</div>
-      </div>
+    <!-- Work Experience Section -->
+    <section id="experience" class="section section-alt">
+        <div class="section-container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Aug 2024 – Present</div>
+                    <div class="timeline-content">
+                        <h3>Senior Web Developer / DevOps Engineer</h3>
+                        <p class="timeline-company">YoForex Corp, Kolkata</p>
+                        <ul>
+                            <li>Led deployment & maintenance of large-scale web apps on AWS Linux servers</li>
+                            <li>Built CI/CD pipelines with GitHub Actions, reducing deployment time by 60%</li>
+                            <li>Implemented Docker-based environments for backend scalability</li>
+                            <li>Managed infrastructure using Terraform and automated server provisioning</li>
+                            <li>Developed YoForex AI trading platform with 390+ ML models</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Dec 2023 – Jul 2024</div>
+                    <div class="timeline-content">
+                        <h3>Web Developer</h3>
+                        <p class="timeline-company">VA Talks Pvt. Ltd.</p>
+                        <ul>
+                            <li>Developed & optimized WordPress sites using Divi & custom PHP</li>
+                            <li>Improved page load speed by ~30% through backend optimization</li>
+                            <li>Implemented caching strategies and database query optimization</li>
+                            <li>Integrated payment gateways and third-party APIs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2023 – Dec 2023</div>
+                    <div class="timeline-content">
+                        <h3>Web Developer</h3>
+                        <p class="timeline-company">The Social Glue Pvt. Ltd.</p>
+                        <ul>
+                            <li>Created responsive features using React & WordPress</li>
+                            <li>Integrated REST APIs for dynamic UI components</li>
+                            <li>Improved SEO performance and Core Web Vitals scores</li>
+                            <li>Collaborated with design team on modern web interfaces</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="container contact">
-      <h2>Contact</h2>
-      <p class="muted">Want to work together? Send a message — I'll reply soon.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-list">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-item-content">
+                                <strong>Email</strong>
+                                <span><a href="mailto:abhishek326kr@gmail.com">abhishek326kr@gmail.com</a></span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-item-content">
+                                <strong>Location</strong>
+                                <span>Kolkata, India</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-item-content">
+                                <strong>LinkedIn</strong>
+                                <span><a href="https://linkedin.com/in/abhishek326kr" target="_blank" rel="noopener">abhishek326kr</a></span>
+                            </div>
+                        </div>
+                    </div>
 
-      <form id="contact-form" class="contact-form" onsubmit="submitContact(event)">
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input id="name" name="name" required />
-        </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required />
-        </div>
-        <div class="form-row">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <div class="form-row form-actions">
-          <button class="btn primary" type="submit">Send</button>
-          <button class="btn ghost" type="button" onclick="openMail()">Email Direct</button>
-        </div>
-      </form>
+                    <h3 style="margin-bottom: 1rem;">Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/abhishek326kr" target="_blank" rel="noopener" class="social-link" title="GitHub">GH</a>
+                        <a href="https://linkedin.com/in/abhishek326kr" target="_blank" rel="noopener" class="social-link" title="LinkedIn">IN</a>
+                        <a href="mailto:abhishek326kr@gmail.com" class="social-link" title="Email">✉</a>
+                    </div>
+                </div>
 
-      <div class="socials muted">
-        <a href="https://github.com/abhishek326kr" target="_blank">GitHub</a> •
-        <a href="https://linkedin.com/in/abhishek326kr" target="_blank">LinkedIn</a>
-      </div>
+                <div class="contact-form">
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <button type="button" class="btn btn-secondary" onclick="openDirectEmail()">Email Direct</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Abhishek Kumar — Web Developer & DevOps Engineer. Built with ♥ in Kolkata.</p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <p>&copy; <span id="year"></span> Abhishek Kumar — Web Developer & DevOps Engineer. Built with ♥ in Kolkata.</p>
+        </div>
+    </footer>
 
-  <script src="java.js"></script>
+    <script>
+        // Form submission
+        function handleSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                alert('Please fill all fields.');
+                return;
+            }
+
+            const mailto = `mailto:abhishek326kr@gmail.com?subject=${encodeURIComponent('Website contact from ' + name)}&body=${encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n— Sent from portfolio`
+            )}`;
+
+            window.location.href = mailto;
+        }
+
+        function openDirectEmail() {
+            window.location.href = 'mailto:abhishek326kr@gmail.com';
+        }
+
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const navHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
